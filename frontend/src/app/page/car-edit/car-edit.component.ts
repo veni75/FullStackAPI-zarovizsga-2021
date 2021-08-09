@@ -29,7 +29,7 @@ export class CarEditComponent implements OnInit {
 
   onSave(ngForm: NgForm): void {
     this.service.update(ngForm.value).subscribe(
-      car => this.router.navigate(['/', 'car']),
+      car => this.router.navigate(['/', 'cars']),
       err => console.error(err)
     );
   }
