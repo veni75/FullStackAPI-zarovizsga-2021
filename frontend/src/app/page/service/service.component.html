@@ -1,0 +1,37 @@
+<div class="container p-3">
+
+  <h1>Service Stations</h1>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Since</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Country</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let service of list$ | async">
+            <td>{{ service.name }}</td>
+            <td>{{ service.since }}</td>
+            <td>{{ service.street }}</td>
+            <td>{{ service.city }}</td>
+            <td>{{ service.country }}</td>
+            <td>
+              <div class="btn-group">
+                <button [routerLink]="['/', 'services', 'edit', service._id]" class="btn btn-info">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

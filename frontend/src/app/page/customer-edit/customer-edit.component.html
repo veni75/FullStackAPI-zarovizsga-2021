@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-6 offset-3 mt-3">
+    <form *ngIf="(customer$ | async) as customer" #editForm="ngForm" (ngSubmit)="onSave(editForm)">
+      <input name="_id" type="hidden" [(ngModel)]="customer._id">
+      <div class="form-group">
+        <label for="">First Name</label>
+        <input class="form-control" type="text" name="firstName" [(ngModel)]="customer.firstName">
+      </div>
+      <div class="form-group">
+        <label for="">Last Name</label>
+        <input class="form-control" type="string" name="lastName" [(ngModel)]="customer.lastName">
+      </div>
+      <div class="form-group">
+        <label for="">Email</label>
+        <input class="form-control" type="text" name="email" [(ngModel)]="customer.email">
+      </div>
+      <div class="form-group">
+        <label for="">Job</label>
+        <input class="form-control" type="text" name="job" [(ngModel)]="customer.job">
+      </div>
+
+      <button type="submit" [disabled]="editForm.invalid" class="btn btn-primary w-100 mt-3 mb-3">
+        <i class="fas fa-save"></i> Update the Customer
+      </button>
+    </form>
+  </div>
+</div>
