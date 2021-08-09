@@ -10,7 +10,12 @@ import { CustomerService } from 'src/app/service/customer.service';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
+  
+  list$: Observable<Customer[]> = this.service.getAll();
+
+  constructor(
+    private service: CustomerService
+  ) { }
 
   ngOnInit(): void {
   }
