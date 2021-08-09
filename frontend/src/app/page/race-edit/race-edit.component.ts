@@ -28,7 +28,7 @@ export class RaceEditComponent implements OnInit {
 
   onSave(ngForm: NgForm): void {
     this.service.update(ngForm.value).subscribe(
-      car => this.router.navigate(['/', 'races']),
+      race => this.router.navigate(['/', 'races']),
       err => console.error(err)
     );
   }

@@ -28,7 +28,7 @@ export class CustomerEditComponent implements OnInit {
 
   onSave(ngForm: NgForm): void {
     this.service.update(ngForm.value).subscribe(
-      car => this.router.navigate(['/', 'customers']),
+      customer => this.router.navigate(['/', 'customers']),
       err => console.error(err)
     );
   }

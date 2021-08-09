@@ -6,7 +6,7 @@ const raceService = require('./service');
 
 // Create a new race.
 exports.create = (req, res, next) => {
-    const validationErrors = new Car(req.body).validateSync();
+    const validationErrors = new Race(req.body).validateSync();
     if (validationErrors) {
         return next(
             new createError.BadRequest(validationErrors)
@@ -39,7 +39,7 @@ exports.findOne = (req, res, next) => {
 };
 
 exports.update = (req, res, next) => {
-    const validationErrors = new Car(req.body).validateSync();
+    const validationErrors = new Race(req.body).validateSync();
     if (validationErrors) {
         return next(
             new createError.BadRequest(validationErrors)
